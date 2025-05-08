@@ -148,6 +148,9 @@ ch5=("""             ###1##         #######
 sor=[ch1,ch2,ch3,ch4,ch5]
 sor1=[ch1,ch2,ch3,ch4,ch5]
 sor2=[ch1,ch2,ch3,ch4,ch5]
+
+apo=float(input("Quando dinheiro deseja apostar?"))
+mo=mo-apo
 print(random.choice(sor))
 r= (random.choice(sor))
 print("*"*40)
@@ -159,19 +162,17 @@ rai= (random.choice(sor2))
 print("*"*40)
 if r==ra and ra==rai:
     print("JACKPOT")
-    print("R$40")
-    mo=mo+40
-    os.system("color2")
+    di=apo*1.3
+    print(f"Você ganhou R${apo}")
+    mo=mo+(apo*1.3)
+  
 if r!=ra and ra!=rai:
     print("Mais dinheiro na minha conta, melhore")
-    mo=mo-5
-    os.system("color4")
 if r!=ra and ra==rai:
     print("Quase.... mais sorte da proxima")
-    os.system("color4")
 if r==ra and ra!=rai:
     print("Ai ai, mais sorte da proxima")
-    os.system("color4")
+    
 
 
 
