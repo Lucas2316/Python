@@ -9,7 +9,7 @@ while p<=0:
     op=input("Oq vc gostaria de fazer?\nDepositar dinheiro\nRetirar dinheiro\nJogar\n ").lower()
     match op:
         case "depositar":
-            mo=float(input("Quanto dinheiro gostaria de depositar?"))
+            mo=float(input("Quanto dinheiro gostaria de depositar: R$"))
         case "retirar":
             if mo<=0:
                 print("Vc não possui dinheiro para saque")
@@ -24,6 +24,8 @@ while p<=0:
             if mo>5:
                 print("Certo, vamos jogar?")
                 p=1
+        case _:
+            print("Escolha uma das 3 opções, não fique criando opções")
 print("Vamos testar a sua sorte?")
 ch1=print("""
                                                   
@@ -144,13 +146,33 @@ ch5=("""             ###1##         #######
        ###         #      #         ###       """)
 
 sor=[ch1,ch2,ch3,ch4,ch5]
+sor1=[ch1,ch2,ch3,ch4,ch5]
+sor2=[ch1,ch2,ch3,ch4,ch5]
 print(random.choice(sor))
-rai=  random.choice(sor)
+r= (random.choice(sor))
 print("*"*40)
-print(random.choice(sor))
+print(random.choice(sor1))
+ra= (random.choice(sor1))
 print("*"*40)
-print(random.choice(sor))
+print(random.choice(sor2))
+rai= (random.choice(sor2))
 print("*"*40)
+if r==ra and ra==rai:
+    print("JACKPOT")
+    print("R$40")
+    mo=mo+40
+    os.system("color2")
+if r!=ra and ra!=rai:
+    print("Mais dinheiro na minha conta, melhore")
+    mo=mo-5
+    os.system("color4")
+if r!=ra and ra==rai:
+    print("Quase.... mais sorte da proxima")
+    os.system("color4")
+if r==ra and ra!=rai:
+    print("Ai ai, mais sorte da proxima")
+    os.system("color4")
+
 
 
 
